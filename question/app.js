@@ -1,4 +1,5 @@
-//Q1 変数
+// 基礎編
+// //Q1 変数
 let nickname = 'はな';
 let age = 24;
 console.log('私のニックネームは' + nickname + 'です。年齢は' + age + 'です。');
@@ -87,3 +88,52 @@ console.log(x + 'を' + y + 'で割った余りは' + remainder(x, y) + 'です�
 
 //Q10 スコープ
 //xのスコープは関数foo内に限られている。xのみを単体でコンソールしようとしても、参照するべき変数がないため、エラーが発生する。
+
+//応用編
+//Q1 標準組み込みオブジェクト
+console.log(Math.floor(Math.random() * (9 + 1)));
+
+//Q2-1 コールバック関数
+setTimeout(() => {
+  console.log('Hello World!');
+}, 3000);
+
+//Q2-2 コールバック関数
+function printName(firstName, formatter) {
+  console.log(formatter(firstName));
+}
+const addIntro = (name) => '私の名前は' + name + 'です。';
+let firstName = '井垣';
+printName(firstName, addIntro);
+
+//Q3 if
+let num = -9;
+if(num > 0){
+  console.log('num is greater than 0');
+}else if(num < 0){
+  console.log('num is less than 0');
+}else if(num === 0){
+  console.log('num is 0');
+};
+
+//Q4 for
+let numbers = [];
+for(let i = 0; i <= 99; i++){
+  numbers.push(i);
+};
+console.log(numbers);
+
+//Q5 for×if
+let mixed = [4, '2', 5, '8', '9', 0, 1];
+for(let i = 0; i <= mixed.length; i++){
+  const value = mixed[i];
+  if(typeof value === 'number'){
+    if (value % 2 === 0){
+      console.log('even');
+    }else{
+      console.log('odd');
+    }
+  }else{
+    console.log('not number');
+  }
+};
